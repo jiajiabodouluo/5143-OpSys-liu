@@ -187,7 +187,7 @@ class Commands(object):
             print("Check command, Should be of the form \n[cat filename]")
             
     #function "CHMOD": outputs text to screen
-    def Chmod(command_passed, command_length, command_mod):
+    def Chmod(command_passed, command_length):
         #CHMOD command is to be of length 3, command and argument
         if(command_length == 3):
             #get the argument passed which is the second index/also file name
