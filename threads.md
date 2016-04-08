@@ -39,7 +39,7 @@ _______________________________
             #self.lock.release()
         print ('Goodbye from thread B')
         
-   It will print out “A: that was weird” and “B: that was weird” all the time. In threadA, it checks sharedNumber != 1 is true (sharedNumber is 2 now), although there is a line of code “sharedNumber = 1” before, and in threadB, it checks sharedNumber != 2 is true (sharedNumber is 1 now), although there is a line of code “sharedNumber = 2” before.
+   It will print out “A: that was weird” and “B: that was weird” all the time. In threadA, it checks sharedNumber != 1 is true (sharedNumber is 2 now), although there is a line of code “sharedNumber = 1” before, and in threadB, it checks sharedNumber != 2 is true (sharedNumber is 1 now), although there is a line of code “sharedNumber = 2” before. It means threadA used the value which was designed by threadB, and threadB used the value which was designed by threadA.
 
 ## 6.Does uncommenting the lock operations clear up the problem in question 5?##
    Yes it does. But the program runs very very slowly.
