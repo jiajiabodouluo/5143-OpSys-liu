@@ -11,7 +11,7 @@ _______________________________
    Yes it fixed, we used threading.lock() instead of race condition. The downside is the thread3 runs so slowly. 
    
 ## 3.Comment out the join statements at the bottom of the program and describe what happens.##
-   If Comment out the join statements, and run the program. The two thread are still working after print out “Goodbye from the main program”. That means the main program terminates.
+   If Comment out the join statements, and run the program. The two thread are still working after print out “Goodbye from the main program”. That means the main program terminates before the threadA and threadB.
    
 ## 4.What happens if you try to Ctrl-C out of the program before it terminates?##
    There is nothing happened. Program is still working.
