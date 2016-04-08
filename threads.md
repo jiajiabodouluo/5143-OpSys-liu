@@ -18,6 +18,26 @@ _______________________________
 
 ## Read and run Threads4.py. This generates a different and more ridiculous race condition. Write concise explanation of what's happening to cause this bizarre behavior using lines from the code and precise explanation.##
 
+        def run(self):
+        global sharedNumber
+        for k in range(10000000):
+            #self.lock.acquire()
+            sharedNumber = 1
+            if sharedNumber != 1:
+                print ('A: that was weird')
+            #self.lock.release()
+        print ('Goodbye from thread A')
+        
+        
+        def run(self):
+        global sharedNumber
+        for k in range(10000000):
+            #self.lock.acquire()
+            sharedNumber = 2
+            if sharedNumber != 2:
+                print ('B: that was weird')
+            #self.lock.release()
+        print ('Goodbye from thread B')
 
 ## Does uncommenting the lock operations clear up the problem in question 5?##
    Yes it does. But the program runs very very slowly.
